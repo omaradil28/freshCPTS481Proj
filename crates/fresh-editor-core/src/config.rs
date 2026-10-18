@@ -5973,7 +5973,7 @@ impl Config {
         languages.insert(
             "verilog".to_string(),
             LanguageConfig {
-                extensions: vec!["vh".to_string(), "verilog".to_string()],
+                extensions: vec!["v".to_string(), "vh".to_string(), "verilog".to_string()],
                 filenames: vec![],
                 grammar: "Verilog".to_string(),
                 comment_prefix: Some("//".to_string()),
@@ -6891,8 +6891,7 @@ impl Config {
         languages.insert(
             "vlang".to_string(),
             LanguageConfig {
-                extensions: vec!["v".to_string(), "vv".to_string()],
-                filenames: vec![],
+                extensions: vec!["vv".to_string()],
                 grammar: "V".to_string(),
                 comment_prefix: Some("//".to_string()),
                 auto_indent: true,
