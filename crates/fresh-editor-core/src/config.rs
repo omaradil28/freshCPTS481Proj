@@ -6892,6 +6892,7 @@ impl Config {
             "vlang".to_string(),
             LanguageConfig {
                 extensions: vec!["vv".to_string()],
+                filenames: vec![],
                 grammar: "V".to_string(),
                 comment_prefix: Some("//".to_string()),
                 auto_indent: true,
