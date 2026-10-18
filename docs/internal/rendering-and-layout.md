@@ -1,5 +1,9 @@
 # Rendering & Layout
 
+> **LEGACY**  
+> This document is outdated.  
+> Prefer [`retained-mode-ui.md`](retained-mode-ui.md) for current rendering and layout information.
+
 Purpose: how Fresh turns buffer bytes into terminal cells — the per-frame render loop, the token→`ViewLine` pipeline, the line-wrap and visual-row caches that make huge files scroll cheaply, folding/wrapping/conceal/virtual-text decorations, split-pane layout, the `Scene` semantic projections shared with the web frontend, and mouse hit-testing.
 
 ---
