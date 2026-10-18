@@ -163,3 +163,24 @@ fn test_set_language_preserves_lsp_compatible_id() {
         language_after_set
     );
 }
+
+#[test]
+fn test_v_file_maps_to_verilog_not_vlang() {
+    let mut harness = EditorTestHarness::create(
+        120,
+        30,
+        HarnessOptions::new()
+            .with_project_root()
+            .with_full_grammar_registry(),
+    )
+    .unwrap();
+    let project_dir = harness.project_dir().unwrap();
+
+    let v_file = project_dir.join("test_module.v");
+    std::fs::write(&v_file, "module top;\nendmodule\n").unwrap();
+    harness.open_file(&v_file).unwrap();
+    harness.render().unwrap();
+
+    let detected_language = harness.editor().active_state().language.clone();
+    assert_eq!(detected_language, "verilog");
+}
